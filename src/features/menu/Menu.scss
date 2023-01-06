@@ -1,0 +1,20 @@
+﻿@import "../../utils/component";
+
+.menu {
+  background-color: $bgColor1;
+  min-height: 100%;
+  color: $txtColor1 !important;
+  .menuButton {
+    box-sizing: unset;
+    border: none;
+    box-shadow: none;
+    .navbar-toggler-icon {
+      background-color: $txtColor1;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

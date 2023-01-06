@@ -1,0 +1,31 @@
+﻿@import "../../utils/component";
+
+.menuCardContainer {
+  // @include media-breakpoint-up(lg) {
+  //   display: flex;
+  //   align-items: flex-start;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //}
+  min-height: 100vh;
+  padding-top: 1rem;
+  background-color: $bgColor2;
+  .menuItem {
+    margin-bottom: 0.5rem;
+    align-items: center;
+    color: $txtColor1;
+    .itemIcon {
+      font-size: 2rem;
+      margin: 0.5rem;
+    }
+    &.student {
+      background-color: $itemColor1;
+    }
+    &.tuition {
+      background-color: $itemColor2;
+    }
+    &.classroom {
+      background-color: $itemColor3;
+    }
+  }
+}

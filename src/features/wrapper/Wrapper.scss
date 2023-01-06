@@ -1,0 +1,10 @@
+﻿@import "../../utils/component";
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Cuprum", sans-serif;
+  a {
+    color: $txtColor1;
+  }
+}

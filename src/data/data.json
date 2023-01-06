@@ -1,0 +1,39 @@
+﻿{
+  "student": [
+    {
+      "name": "Yuki",
+      "kana": "ゆき",
+      "class": "Monday"
+    },
+    {
+      "name": "Sana",
+      "kana": "さな",
+      "class": "Wednesday"
+    },
+    {
+      "name": "Mariko",
+      "kana": "まりこ",
+      "class": "Tuesday"
+    },
+    {
+      "name": "Jenny",
+      "kana": "じぇにー",
+      "class": "Saturday"
+    },
+    {
+      "name": "Zien",
+      "kana": "ぜいん",
+      "class": "Friday"
+    },
+    {
+      "name": "Ken",
+      "kana": "けん",
+      "class": "Thursday"
+    },
+    {
+      "name": "Takuya",
+      "kana": "たくや",
+      "class": "Friday"
+    }
+  ]
+}
