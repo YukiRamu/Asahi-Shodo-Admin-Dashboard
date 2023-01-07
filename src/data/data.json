@@ -1,36 +1,43 @@
 ﻿{
   "student": [
     {
+      "id" : 1,
       "name": "Yuki",
       "kana": "ゆき",
       "class": "Monday"
     },
     {
+      "id" : 2,
       "name": "Sana",
       "kana": "さな",
       "class": "Wednesday"
     },
     {
+      "id" : 3,
       "name": "Mariko",
       "kana": "まりこ",
       "class": "Tuesday"
     },
     {
+      "id" : 4,
       "name": "Jenny",
       "kana": "じぇにー",
       "class": "Saturday"
     },
     {
+      "id" : 5,
       "name": "Zien",
       "kana": "ぜいん",
       "class": "Friday"
     },
     {
+      "id" : 6,
       "name": "Ken",
       "kana": "けん",
       "class": "Thursday"
     },
     {
+      "id" : 7,
       "name": "Takuya",
       "kana": "たくや",
       "class": "Friday"

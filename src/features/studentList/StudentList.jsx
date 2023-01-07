@@ -6,6 +6,7 @@ import data from '../../data/data.json'; //will be connected to mongo DB in the 
 import { useSelector, useDispatch } from 'react-redux';
 import { sortAsc, sortDesc, getAllStudent } from '../../action/Action';
 import rootReducer from '../../reduer';
+import StudentModal from '../studentModal/StudentModal';
 
 const StudentList = () => {
 
@@ -14,8 +15,9 @@ const StudentList = () => {
   const dispatch = useDispatch();
 
   //private state
-  // const [studentData, setStudentData] = useState(data.student);
   const [sortOrder, setSortOrder] = useState('asc');
+  const [show, setShow] = useState(false);
+  const [studentId, setStudentId] = useState(0);
 
   //When the component is first mounted
   useEffect(() => {
@@ -24,64 +26,59 @@ const StudentList = () => {
 
   //method
   const sortStudentList = (item, order) => {
-
     setSortOrder(order);
     if (order === 'desc') {
       dispatch(sortDesc(item));
     } else {
       dispatch(sortAsc(item));
     }
-
-    //name sort ---- WITHOUT Redux
-    // if (item === 'name') {
-    //   if (order === 'desc') {
-    //     setStudentData(studentData.sort((a, b) => b.name.localeCompare(a.name)));
-    //   } else {
-    //     setStudentData(studentData.sort((a, b) => a.name.localeCompare(b.name)));
-    //   }
-    // } else {
-    //   //class sort
-    //   if (order === 'desc') {
-
-    //     setStudentData(studentData.sort((a, b) => classList.indexOf(b.class) > classList.indexOf(a.class) ? -1 : 1));
-    //   } else {
-    //     setStudentData(studentData.sort((a, b) => classList.indexOf(a.class) > classList.indexOf(b.class) ? -1 : 1));
-    //   }
-    // }
-
-    
   };
+
+  const openDetail = (id) => {
+    setShow(true);
+    setStudentId(id);
+  };
+
+  //close modal
+  const handleClose = () => setShow(false);
 
   return (
     <>
       <Container>
         {studentList.lengh !== 0 &&
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name {sortOrder === 'asc' ?
-                  <FaSortAlphaDown onClick={() => sortStudentList('name', 'desc')} /> :
-                  <FaSortAlphaUpAlt onClick={() => sortStudentList('name', 'asc')} />}</th>
-                <th>Kana</th>
-                <th>Class {sortOrder === 'asc' ?
-                  <FaSortDown onClick={() => sortStudentList('class', 'desc')} /> :
-                  <FaSortUp onClick={() => sortStudentList('class', 'asc')} />}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                studentList.map((elem, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{elem.name}</td>
-                    <td>{elem.kana}</td>
-                    <td>{elem.class}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </Table>
+          <>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name {sortOrder === 'asc' ?
+                    <FaSortAlphaDown onClick={() => sortStudentList('name', 'desc')} /> :
+                    <FaSortAlphaUpAlt onClick={() => sortStudentList('name', 'asc')} />}</th>
+                  <th>Kana</th>
+                  <th>Class {sortOrder === 'asc' ?
+                    <FaSortDown onClick={() => sortStudentList('class', 'desc')} /> :
+                    <FaSortUp onClick={() => sortStudentList('class', 'asc')} />}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  studentList.map((elem, index) => (
+                    <tr key={index} onClick={() => openDetail(elem.id)}>
+                      <td>{elem.id}</td>
+                      <td>{elem.name}</td>
+                      <td>{elem.kana}</td>
+                      <td>{elem.class}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </Table>
+            {/* Student Detail Modal */}
+            <StudentModal
+              show={show}
+              id={studentId}
+              handleClose={handleClose} />
+          </>
         }
       </Container>
     </>
