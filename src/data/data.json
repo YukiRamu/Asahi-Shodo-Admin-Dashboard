@@ -8,6 +8,7 @@
       "grade": "中２",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "0796-35-8585",
+      "tuition": "3000",
       "note": "部活のため時々おくれることあり"
     },
     {
@@ -18,6 +19,7 @@
       "grade": "小２",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "0796-35-8585",
+      "tuition": "3000",
       "note": "弓道部"
     },
     {
@@ -28,6 +30,7 @@
       "grade": "小４",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "0796-35-8585",
+      "tuition": "3000",
       "note": "来年卒業"
     },
     {
@@ -38,6 +41,7 @@
       "grade": "小5",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "0796-35-8585",
+      "tuition": "2500",
       "note": "nothing special"
     },
     {
@@ -48,6 +52,7 @@
       "grade": "小1",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "0796-35-8585",
+      "tuition": "3500",
       "note": "nothing special"
     },
     {
@@ -58,6 +63,7 @@
       "grade": "中３",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "26598151358",
+      "tuition": "3000",
       "note": "nothing special"
     },
     {
@@ -65,9 +71,10 @@
       "name": "Takuya",
       "kana": "たくや",
       "class": "Friday",
-      "grade": "Monday",
+      "grade": "中３",
       "address": "兵庫県芦屋市朝日丘町16-28",
       "tel": "0796-35-8585",
+      "tuition": "3500",
       "note": "nothing special"
     }
   ]

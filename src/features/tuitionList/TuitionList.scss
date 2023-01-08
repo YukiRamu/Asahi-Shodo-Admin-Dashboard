@@ -1,0 +1,33 @@
+﻿@import "../../utils/component";
+
+.tuitionTable {
+  padding: 1rem;
+  margin: 1rem;
+  width: -webkit-fill-available;
+  // border: $itemColor2;
+  box-shadow: unset;
+  thead {
+    background-color: $itemColor2;
+    color: $txtColor1;
+  }
+  tbody {
+    tr {
+      td {
+        box-shadow: unset;
+      }
+      .studentName {
+        background-color: $itemColor2;
+        color: $txtColor1;
+        font-weight: bold;
+      }
+    }
+    tr:nth-child(2n) > .dateData,
+    tr:nth-child(2n) > th {
+      background-color: $itemColorLight2;
+    }
+    tr:nth-child(2n + 1) > .dateData,
+    tr:nth-child(2n + 1) > th {
+      background-color: $txtColor1;
+    }
+  }
+}

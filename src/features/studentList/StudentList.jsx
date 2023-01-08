@@ -64,10 +64,10 @@ const StudentList = () => {
                 {
                   studentList.map((elem, index) => (
                     <tr key={index} onClick={() => openDetail(elem.id)}>
-                      <td>{elem.id}</td>
-                      <td>{elem.name}</td>
-                      <td>{elem.kana}</td>
-                      <td>{elem.class}</td>
+                      <td className='studentId'>{elem.id}</td>
+                      <td className='studentData'>{elem.name}</td>
+                      <td className='studentData'>{elem.kana}</td>
+                      <td className='studentData'>{elem.class}</td>
                     </tr>
                   ))
                 }

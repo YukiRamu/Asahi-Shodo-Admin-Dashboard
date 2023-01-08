@@ -1,20 +1,16 @@
 ﻿import React, { useState, useEffect } from 'react';
 import './StudentModal.scss';
 import { Button, Modal, Row, Col } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import rootReducer from '../../reduer';
 
 const StudentModal = (props) => {
 
   //redux
   const student = useSelector(state => state.rootReducer.student);
-  const dispatch = useDispatch();
 
   //private state
   const [selected, setSelected] = useState([]);
-
-  // console.log(props);
-  // console.log('modal', student);
 
   //method
   //get student detail by ID

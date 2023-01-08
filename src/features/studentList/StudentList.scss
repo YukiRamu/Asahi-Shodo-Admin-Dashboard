@@ -2,14 +2,31 @@
 
 .studentListContainer {
   .studentTable {
-    border: $itemColor1;
+    // border: $itemColor1;
+    box-shadow: unset;
     thead {
       background-color: $itemColor1;
       color: $txtColor1;
     }
-    // tbody > tr:nth-child(2n) > td,
-    // tbody > tr:nth-child(2n) > th {
-    //     background-color: $itemColor1;
-    //   }
+    tbody {
+      tr {
+        td {
+          box-shadow: unset;
+        }
+        .studentId {
+          background-color: $itemColor1;
+          color: $txtColor1;
+          font-weight: bold;
+        }
+      }
+      tr:nth-child(2n) > .studentData,
+      tr:nth-child(2n) > th {
+        background-color: $itemColorLight1;
+      }
+      tr:nth-child(2n + 1) > .studentData,
+      tr:nth-child(2n + 1) > th {
+        background-color: $txtColor1;
+      }
+    }
   }
 }
