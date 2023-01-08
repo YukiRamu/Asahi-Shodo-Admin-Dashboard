@@ -5,15 +5,11 @@
     border: $itemColor1;
     thead {
       background-color: $itemColor1;
-      color: $bgColor2;
+      color: $txtColor1;
     }
-    tbody > tr:nth-child(2n) > td,
-    tbody > tr:nth-child(2n) > th {
-        background-color: $itemColor1;
-      }
+    // tbody > tr:nth-child(2n) > td,
+    // tbody > tr:nth-child(2n) > th {
+    //     background-color: $itemColor1;
+    //   }
   }
-  // .table-striped > tbody > tr:nth-child(2n + 1) > td,
-  // .table-striped > tbody > tr:nth-child(2n + 1) > th {
-  //   background-color: $itemColor1;
-  // }
 }

@@ -4,9 +4,10 @@ import './Header.scss';
 const Header = (props) => {
 
   return (
-    <header>
+    <header className={`${props.menuItem }`}>
       {props.menuItem} List
     </header>
+
   );
 };
 

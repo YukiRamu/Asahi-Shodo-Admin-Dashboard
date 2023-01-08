@@ -1,1 +1,24 @@
-﻿
+﻿@import "../../utils/component";
+
+.modal-content {
+  border: none;
+  .studentModalHeader {
+    background-color: $itemColor1;
+    color: $txtColor1;
+    .btn-close {
+      background-color: $itemColor1;
+      color: $txtColor1;
+    }
+  }
+  .studentModalBody{
+    .tileCol{
+      font-weight: bold;
+    }
+  }
+  .studentModalFooter {
+    .closeButton {
+      background-color: $itemColor1;
+      border: none;
+    }
+  }
+}

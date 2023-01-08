@@ -13,8 +13,8 @@ const StudentModal = (props) => {
   //private state
   const [selected, setSelected] = useState([]);
 
-  console.log(props);
-  console.log('modal', student);
+  // console.log(props);
+  // console.log('modal', student);
 
   //method
   //get student detail by ID
@@ -34,48 +34,48 @@ const StudentModal = (props) => {
           centered
           show={props.show} onHide={props.handleClose} animation={false}
         >
-          <Modal.Header closeButton>
+          <Modal.Header className='studentModalHeader' closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               {selected.name} ({selected.kana})
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='studentModalBody'>
             <h5>Monday</h5>
             <Row>
-              <Col xs={6} md={4}>
-                Grade
+              <Col xs={3} md={4} className='tileCol'>
+                Grade:
               </Col>
-              <Col xs={12} md={8}>
+              <Col xs={9} md={8}>
                 {selected.grade}
               </Col>
             </Row>
             <Row>
-              <Col xs={6} md={4}>
-                Address
+              <Col xs={3} md={4} className='tileCol'>
+                Address:
               </Col>
-              <Col xs={12} md={8}>
+              <Col xs={9} md={8}>
                 {selected.address}
               </Col>
             </Row>
             <Row>
-              <Col xs={6} md={4}>
-                Tel
+              <Col xs={3} md={4} className='tileCol'>
+                Tel:
               </Col>
-              <Col xs={12} md={8}>
+              <Col xs={9} md={8}>
                 {selected.tel}
               </Col>
             </Row>
             <Row>
-              <Col xs={6} md={4}>
-                Note
+              <Col xs={3} md={4} className='tileCol'>
+                Note:
               </Col>
-              <Col xs={12} md={8}>
+              <Col xs={9} md={8}>
                 {selected.note}
               </Col>
             </Row>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={props.handleClose}>
+          <Modal.Footer className='studentModalFooter'>
+            <Button className='closeButton' variant="secondary" onClick={props.handleClose}>
               Close
             </Button>
           </Modal.Footer>
