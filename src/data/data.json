@@ -1,46 +1,74 @@
 ﻿{
   "student": [
     {
-      "id" : 1,
+      "id": 1,
       "name": "Yuki",
       "kana": "ゆき",
-      "class": "Monday"
+      "class": "Monday",
+      "grade": "中２",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "0796-35-8585",
+      "note": "部活のため時々おくれることあり"
     },
     {
-      "id" : 2,
+      "id": 2,
       "name": "Sana",
       "kana": "さな",
-      "class": "Wednesday"
+      "class": "Wednesday",
+      "grade": "小２",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "0796-35-8585",
+      "note": "弓道部"
     },
     {
-      "id" : 3,
+      "id": 3,
       "name": "Mariko",
       "kana": "まりこ",
-      "class": "Tuesday"
+      "class": "Tuesday",
+      "grade": "小４",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "0796-35-8585",
+      "note": "来年卒業"
     },
     {
-      "id" : 4,
+      "id": 4,
       "name": "Jenny",
       "kana": "じぇにー",
-      "class": "Saturday"
+      "class": "Saturday",
+      "grade": "小5",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "0796-35-8585",
+      "note": "nothing special"
     },
     {
-      "id" : 5,
+      "id": 5,
       "name": "Zien",
       "kana": "ぜいん",
-      "class": "Friday"
+      "class": "Friday",
+      "grade": "小1",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "0796-35-8585",
+      "note": "nothing special"
     },
     {
-      "id" : 6,
+      "id": 6,
       "name": "Ken",
       "kana": "けん",
-      "class": "Thursday"
+      "class": "Thursday",
+      "grade": "中３",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "26598151358",
+      "note": "nothing special"
     },
     {
-      "id" : 7,
+      "id": 7,
       "name": "Takuya",
       "kana": "たくや",
-      "class": "Friday"
+      "class": "Friday",
+      "grade": "Monday",
+      "address": "兵庫県芦屋市朝日丘町16-28",
+      "tel": "0796-35-8585",
+      "note": "nothing special"
     }
   ]
 }

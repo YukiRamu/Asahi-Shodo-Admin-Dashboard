@@ -44,10 +44,10 @@ const StudentList = () => {
 
   return (
     <>
-      <Container>
+      <Container className='studentListContainer'>
         {studentList.lengh !== 0 &&
           <>
-            <Table striped bordered hover>
+            <Table striped bordered hover className='studentTable'>
               <thead>
                 <tr>
                   <th>#</th>

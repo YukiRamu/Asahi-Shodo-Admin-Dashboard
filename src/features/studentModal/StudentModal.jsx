@@ -46,7 +46,7 @@ const StudentModal = (props) => {
                 Grade
               </Col>
               <Col xs={12} md={8}>
-                selected.grade
+                {selected.grade}
               </Col>
             </Row>
             <Row>
@@ -54,7 +54,7 @@ const StudentModal = (props) => {
                 Address
               </Col>
               <Col xs={12} md={8}>
-                selected.address
+                {selected.address}
               </Col>
             </Row>
             <Row>
@@ -62,7 +62,7 @@ const StudentModal = (props) => {
                 Tel
               </Col>
               <Col xs={12} md={8}>
-                selected.tel
+                {selected.tel}
               </Col>
             </Row>
             <Row>
@@ -70,7 +70,7 @@ const StudentModal = (props) => {
                 Note
               </Col>
               <Col xs={12} md={8}>
-                selected.note
+                {selected.note}
               </Col>
             </Row>
           </Modal.Body>

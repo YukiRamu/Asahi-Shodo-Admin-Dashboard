@@ -7,7 +7,7 @@ const Menu = () => {
     <>
       <Navbar className='menu' expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#home">Asahi Shodo</Navbar.Brand>
+          <Navbar.Brand href="/">Asahi Shodo</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className='menuButton'/>
           <Navbar.Collapse id="basic-navbar-nav" className='menuButton'>
             <Nav className="me-auto">
