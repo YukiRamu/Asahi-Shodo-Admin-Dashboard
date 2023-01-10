@@ -77,5 +77,49 @@
       "tuition": "3500",
       "note": "nothing special"
     }
+  ],
+  "tuition": [
+    {
+      "studentId": 1,
+      "tuition": "3000",
+      "month": "January",
+      "payDate": "12/2"
+    },
+    {
+      "studentId": 2,
+      "tuition": "2500",
+      "month": "January",
+      "payDate": "12/2"
+    },
+    {
+      "studentId": 3,
+      "tuition": "3500",
+      "month": "January",
+      "payDate": "12/2"
+    },
+    {
+      "studentId": 4,
+      "tuition": "3300",
+      "month": "January",
+      "payDate": "12/2"
+    },
+    {
+      "studentId": 5,
+      "tuition": "2000",
+      "month": "January",
+      "payDate": "12/2"
+    },
+    {
+      "studentId": 6,
+      "tuition": "2500",
+      "month": "January",
+      "payDate": "12/2"
+    },
+    {
+      "studentId": 7,
+      "tuition": "3000",
+      "month": "January",
+      "payDate": "12/2"
+    }
   ]
 }

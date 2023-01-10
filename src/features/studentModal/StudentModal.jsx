@@ -7,7 +7,7 @@ import rootReducer from '../../reduer';
 const StudentModal = (props) => {
 
   //redux
-  const student = useSelector(state => state.rootReducer.student);
+  const studentData = useSelector(state => state.rootReducer.student);
 
   //private state
   const [selected, setSelected] = useState([]);
@@ -15,11 +15,11 @@ const StudentModal = (props) => {
   //method
   //get student detail by ID
   useEffect(() => {
-    if (props.id !== 0 && student.length !== 0) {
-      const selectedStudent = student.filter(elem => elem.id === props.id);
+    if (props.id !== 0 && studentData.studentList.length !== 0) {
+      const selectedStudent = studentData.studentList.filter(elem => elem.id === props.id);
       setSelected(selectedStudent[0]);
     }
-  }, [props.id, student.length]);
+  }, [props.id, studentData.studentList.length]);
 
   return (
     <>

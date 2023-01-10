@@ -19,4 +19,11 @@ export const getAllStudent = (studentList) => {
   };
 };
 
+export const getAllTuition = (tuitionList) => {
+  return {
+    type: "getAllTuition",
+    payload: tuitionList
+  };
+};
+
 

@@ -11,7 +11,7 @@ import StudentModal from '../studentModal/StudentModal';
 const StudentList = () => {
 
   //redux
-  const studentList = useSelector(state => state.rootReducer.student);
+  const studentData = useSelector(state => state.rootReducer.student);
   const dispatch = useDispatch();
 
   //private state
@@ -21,7 +21,7 @@ const StudentList = () => {
 
   //When the component is first mounted
   useEffect(() => {
-    dispatch(getAllStudent(data.student));
+    dispatch(getAllStudent(data.student)); //will be connected to mongo DB
   }, []);
 
   //method
@@ -45,7 +45,7 @@ const StudentList = () => {
   return (
     <>
       <Container className='studentListContainer'>
-        {studentList.lengh !== 0 &&
+        {studentData.studentList.lengh !== 0 &&
           <>
             <Table striped bordered hover className='studentTable'>
               <thead>
@@ -62,7 +62,7 @@ const StudentList = () => {
               </thead>
               <tbody>
                 {
-                  studentList.map((elem, index) => (
+                  studentData.studentList.map((elem, index) => (
                     <tr key={index} onClick={() => openDetail(elem.id)}>
                       <td className='studentId'>{elem.id}</td>
                       <td className='studentData'>{elem.name}</td>
