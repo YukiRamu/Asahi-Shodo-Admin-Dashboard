@@ -32,17 +32,33 @@ const StudentModal = (props) => {
         >
           <Modal.Header className='studentModalHeader' closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              {selected.name} ({selected.kana})
+              {selected.name}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className='studentModalBody'>
-            <h5>Monday</h5>
+            <img src={`${selected.picture}`} alt="profphoto" className='photo' />
             <Row>
               <Col xs={3} md={4} className='tileCol'>
-                Grade:
+                Location:
               </Col>
               <Col xs={9} md={8}>
-                {selected.grade}
+                {selected.location}
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={3} md={4} className='tileCol'>
+                Email:
+              </Col>
+              <Col xs={9} md={8}>
+                {selected.email}
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={3} md={4} className='tileCol'>
+                Gender:
+              </Col>
+              <Col xs={9} md={8}>
+                {selected.gender}
               </Col>
             </Row>
             <Row>
@@ -51,22 +67,6 @@ const StudentModal = (props) => {
               </Col>
               <Col xs={9} md={8}>
                 {selected.address}
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={3} md={4} className='tileCol'>
-                Tel:
-              </Col>
-              <Col xs={9} md={8}>
-                {selected.tel}
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={3} md={4} className='tileCol'>
-                Note:
-              </Col>
-              <Col xs={9} md={8}>
-                {selected.note}
               </Col>
             </Row>
           </Modal.Body>

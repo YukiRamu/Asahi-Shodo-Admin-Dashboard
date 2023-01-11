@@ -10,8 +10,13 @@
       color: $txtColor1;
     }
   }
-  .studentModalBody{
-    .tileCol{
+  .studentModalBody {
+    .photo {
+      display: block;
+      margin: auto;
+      margin-bottom: 1rem;
+    }
+    .tileCol {
       font-weight: bold;
     }
   }

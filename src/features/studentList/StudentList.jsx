@@ -1,8 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import './StudentList.scss';
 import { Container, Table } from 'react-bootstrap';
-import { FaSortUp, FaSortDown, FaSortAlphaUpAlt, FaSortAlphaDown } from "react-icons/fa";
-import data from '../../data/data.json'; //will be connected to mongo DB in the future  
+import { FaSortAlphaUpAlt, FaSortAlphaDown } from "react-icons/fa";
 import { useSelector, useDispatch } from 'react-redux';
 import { sortAsc, sortDesc, getAllStudent } from '../../action/Action';
 import rootReducer from '../../reduer';
@@ -21,26 +20,20 @@ const StudentList = () => {
   const [sortOrder, setSortOrder] = useState('asc');
   const [show, setShow] = useState(false);
   const [studentId, setStudentId] = useState(0);
-  // const [data, setData] = useState({
-  //   name: "",
-  //   age: "",
-  //   email: "",
-  //   gender: "",
-  //   location: "",
-  //   picture: "",
-  // });
 
   //When the component is first mounted
   useEffect(() => {
     (async () => {
       const fetchedData = await getData();
       if (fetchedData.length !== 0) {
-        const DT = fetchedData.map(elem => ({
-          name: elem.name.first + ` ` + elem.name.last,
+        const DT = fetchedData.map((elem, index) => ({
+          id: index + 1,
+          name: `${elem.name.first} ${elem.name.last}`,
           age: elem.dob.age,
           email: elem.email,
           gender: elem.gender,
           location: elem.location.country,
+          address: `${elem.location.street.number} ${elem.location.street.name}, ${elem.location.city}, ${elem.location.state}, ${elem.location.country}, ${elem.location.postcode}`,
           picture: elem.picture.large,
         }));
         dispatch(getAllStudent(DT));
@@ -48,12 +41,8 @@ const StudentList = () => {
     })();
   }, []);
 
-
   //method
   const sortStudentList = (order, item) => {
-    const nameList = studentData.studentList.map(elem => elem.name.first + ` ` + elem.name.last);
-    const locationList = studentData.studentList.map(elem => elem.location.country);
-
     if (order === 'desc') {
       setSortOrder("asc");
       dispatch(sortDesc(item));
