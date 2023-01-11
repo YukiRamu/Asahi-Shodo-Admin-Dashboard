@@ -12,21 +12,14 @@ const StudentReducer = (state = initialStudentList, action) => {
     case 'getAllTuition':
       return { ...state, tuitionList: action.payload };
     case 'sortDesc':
-      if (action.payload === 'name') {
-        return { ...state, studentList: state.studentList.sort((a, b) => b.name.localeCompare(a.name)) };
-      } else if (action.payload === 'class') {
-        return { ...state, studentList: state.studentList.sort((a, b) => classList.indexOf(b.class) > classList.indexOf(a.class) ? -1 : 1) };
-      }
+      console.log(action.payload);
+      return { ...state, studentList: state.studentList.sort((a, b) => b[action.payload].localeCompare(a[action.payload])) };
     case 'sortAsc':
-      if (action.payload === 'name') {
-        return { ...state, studentList: state.studentList.sort((a, b) => a.name.localeCompare(b.name)) };
-      } else if (action.payload === 'class') {
-        return { ...state, studentList: state.studentList.sort((a, b) => classList.indexOf(a.class) > classList.indexOf(b.class) ? -1 : 1) };
-      }
+      console.log(action.payload);
+      return { ...state, studentList: state.studentList.sort((a, b) => a[action.payload].localeCompare(b[action.payload])) };
     default:
       return state;
   }
-
 };
 
 export default StudentReducer; 

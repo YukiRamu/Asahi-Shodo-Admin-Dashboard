@@ -8,6 +8,7 @@ export const getData = async () => {
       throw res.statusText;
     } else {
       const studentData = await res.json();
+      console.log(studentData.results)
       return studentData.results;
     }
   } catch (error) {

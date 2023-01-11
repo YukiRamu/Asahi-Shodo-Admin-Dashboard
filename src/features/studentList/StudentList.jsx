@@ -8,7 +8,6 @@ import { sortAsc, sortDesc, getAllStudent } from '../../action/Action';
 import rootReducer from '../../reduer';
 import StudentModal from '../studentModal/StudentModal';
 import { getData } from '../../data/StudentData';
-import uuid from 'react-uuid';
 
 const StudentList = () => {
 
@@ -22,25 +21,44 @@ const StudentList = () => {
   const [sortOrder, setSortOrder] = useState('asc');
   const [show, setShow] = useState(false);
   const [studentId, setStudentId] = useState(0);
+  // const [data, setData] = useState({
+  //   name: "",
+  //   age: "",
+  //   email: "",
+  //   gender: "",
+  //   location: "",
+  //   picture: "",
+  // });
 
   //When the component is first mounted
   useEffect(() => {
     (async () => {
-      const data = await getData();
-      console.log(data);
-      if (data.length !== 0) {
-        dispatch(getAllStudent(data));
+      const fetchedData = await getData();
+      if (fetchedData.length !== 0) {
+        const DT = fetchedData.map(elem => ({
+          name: elem.name.first + ` ` + elem.name.last,
+          age: elem.dob.age,
+          email: elem.email,
+          gender: elem.gender,
+          location: elem.location.country,
+          picture: elem.picture.large,
+        }));
+        dispatch(getAllStudent(DT));
       }
     })();
   }, []);
 
 
   //method
-  const sortStudentList = (item, order) => {
-    setSortOrder(order);
+  const sortStudentList = (order, item) => {
+    const nameList = studentData.studentList.map(elem => elem.name.first + ` ` + elem.name.last);
+    const locationList = studentData.studentList.map(elem => elem.location.country);
+
     if (order === 'desc') {
+      setSortOrder("asc");
       dispatch(sortDesc(item));
-    } else {
+    } else if (order === 'asc') {
+      setSortOrder("desc");
       dispatch(sortAsc(item));
     }
   };
@@ -63,22 +81,22 @@ const StudentList = () => {
                 <tr>
                   <th>#</th>
                   <th>Name {sortOrder === 'asc' ?
-                    <FaSortAlphaDown onClick={() => sortStudentList('name', 'desc')} /> :
-                    <FaSortAlphaUpAlt onClick={() => sortStudentList('name', 'asc')} />}</th>
+                    <FaSortAlphaDown onClick={() => sortStudentList('asc', 'name')} /> :
+                    <FaSortAlphaUpAlt onClick={() => sortStudentList('desc', 'name')} />}</th>
                   <th>Gender</th>
                   <th>Location {sortOrder === 'asc' ?
-                    <FaSortDown onClick={() => sortStudentList('class', 'desc')} /> :
-                    <FaSortUp onClick={() => sortStudentList('class', 'asc')} />}</th>
+                    <FaSortAlphaDown onClick={() => sortStudentList('asc', 'location')} /> :
+                    <FaSortAlphaDown onClick={() => sortStudentList('desc', 'location')} />}</th>
                 </tr>
               </thead>
               <tbody>
                 {
                   studentData.studentList.map((elem, index) => (
                     <tr key={index} onClick={() => openDetail(elem.id)}>
-                      <td className='studentId'>{index+1}</td>
-                      <td className='studentData'>{elem.name.first} {elem.name.last} ({elem.dob.age})</td>
+                      <td className='studentId'>{index + 1}</td>
+                      <td className='studentData'>{elem.name} {`(${elem.age})`}</td>
                       <td className='studentData'>{elem.gender}</td>
-                      <td className='studentData'>{elem.location.country}</td>
+                      <td className='studentData'>{elem.location}</td>
                     </tr>
                   ))
                 }
