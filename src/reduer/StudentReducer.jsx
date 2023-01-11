@@ -3,7 +3,6 @@ const initialStudentList = {
   studentList: [],
   tuitionList: []
 };
-const classList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const StudentReducer = (state = initialStudentList, action) => {
   switch (action.type) {

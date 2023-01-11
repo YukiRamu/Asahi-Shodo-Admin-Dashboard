@@ -7,6 +7,7 @@ import { sortAsc, sortDesc, getAllStudent } from '../../action/Action';
 import rootReducer from '../../reduer';
 import StudentModal from '../studentModal/StudentModal';
 import { getData } from '../../data/StudentData';
+import uuid from 'react-uuid';
 
 const StudentList = () => {
 
@@ -81,7 +82,7 @@ const StudentList = () => {
               <tbody>
                 {
                   studentData.studentList.map((elem, index) => (
-                    <tr key={index} onClick={() => openDetail(elem.id)}>
+                    <tr key={uuid()} onClick={() => openDetail(elem.id)}>
                       <td className='studentId'>{index + 1}</td>
                       <td className='studentData'>{elem.name} {`(${elem.age})`}</td>
                       <td className='studentData'>{elem.gender}</td>
