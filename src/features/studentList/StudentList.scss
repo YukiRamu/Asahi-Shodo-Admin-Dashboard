@@ -10,8 +10,13 @@
     }
     tbody {
       tr {
+        cursor: pointer;
+        &:hover {
+          font-weight: bold;
+        }
         td {
           box-shadow: unset;
+
         }
         .studentId {
           background-color: $itemColor1;

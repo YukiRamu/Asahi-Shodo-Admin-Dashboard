@@ -14,6 +14,10 @@
     tr {
       td {
         box-shadow: unset;
+        cursor: pointer;
+        &:hover {
+          font-weight: bold;
+        }
       }
       .studentName {
         background-color: $itemColor2;

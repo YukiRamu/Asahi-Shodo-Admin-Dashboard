@@ -72,7 +72,7 @@ const TuitionList = () => {
                   <tr key={uuid()}>
                     <td className='studentName'>{elem.name}</td>
                     {Array.from({ length: 12 }).map((_) => (
-                      <td className='dateData' key={uuid()}>{elem.tuition}</td>
+                      <td className='dateData' key={uuid()}>3000{elem.tuition}</td>
                     ))}
                   </tr>
                 </>)}
